@@ -1,0 +1,123 @@
+/* --- CSS Color & Type System --- */
+:root {
+  --primary-color: #2563eb;
+  --text-dark: #1f2937;
+  --text-light: #f3f4f6;
+  --bg-color: #ffffff;
+  --bg-secondary: #f9fafb;
+  --font-main: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background-color: var(--bg-color);
+  line-height: 1.6;
+}
+
+/* --- Flexbox: Header & Navigation --- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* --- General Layout --- */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+/* --- CSS Grid: Project Layout --- */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: var(--bg-secondary);
+}
+
+/* --- Flexbox: Footer --- */
+.site-footer {
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: var(--text-dark);
+  color: var(--text-light);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.social-links a {
+  color: var(--text-light);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.social-links a:hover {
+  border-bottom-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 600px) {
+  /* Stack the header on small screens */
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  main {
+    padding: 1rem;
+  }
+}
